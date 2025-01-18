@@ -10,7 +10,7 @@ const jobSchema = new mongoose.Schema(
     position: {
       type: String,
       required: [true, "Enter job postion"],
-      minLength: 5,
+      minLength: [5, "min length is 5 chars"],
     },
     status: {
       type: String,
