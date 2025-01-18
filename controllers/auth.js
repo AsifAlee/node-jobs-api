@@ -4,9 +4,6 @@ const { StatusCodes } = require("http-status-codes");
 const { BadRequestError, UnauthenticatedError } = require("../errors");
 
 const register = async (req, res) => {
-  await new Promise((resolve, reject) => {
-    reject("rejected promise");
-  });
   const user = await User.create({ ...req.body });
   const token = await user.getJwt();
 
